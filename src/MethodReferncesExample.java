@@ -12,7 +12,7 @@ public class MethodReferncesExample {
                 .forEach(str -> System.out.println(str));
 
         companies.stream().map(String::toUpperCase)
-                .forEach(MethodReferncesExample::print);
+                .forEach(MethodReferncesExample::printName);
 
         Supplier<String> integerSupplier = () -> new String();
         Supplier<String> integerSupplier1 = String::new;
