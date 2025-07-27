@@ -1,7 +1,8 @@
 import java.util.List;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
-public class s2e7e11 {
+public class s2e7e12 {
     public static void main(String[] args) {
         //Square every umber in the list and sum them
         List<Integer> list = List.of(12, 3, 4, 5, 1, 6);
@@ -30,5 +31,15 @@ public class s2e7e11 {
         List<String> companies = List.of("Google", "Amazon", "Microsoft", "Apple", "Facebook", "Tesla");
         List<Integer> lengthList = companies.stream().map(String::length).collect(Collectors.toList());
         System.out.println("Company length List :" + lengthList);
+
+        //E12 : Find the Functional Interface behind the second argument of reduce method.
+        BinaryOperator<Integer> sum = Integer::sum;
+        BinaryOperator<Integer> sum1 = new BinaryOperator<Integer>() {
+            @Override
+            public Integer apply(Integer integer, Integer integer2) {
+                return integer + integer2;
+            }
+        };
+        list.stream().reduce(0, sum);
     }
 }
