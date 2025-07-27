@@ -29,7 +29,7 @@ public class s1e1e6 {
 
         //Print the number of characters in each name
         System.out.println("-------------------");
-        names.stream().map(String::length)
+        names.stream().map(name -> name+" "+name.length())
                 .forEach(System.out::println);
     }
 }
