@@ -51,14 +51,14 @@ public class LevelIQ1to10 {
         String input = "Java articles are Awesome";
 
         Character c2 = input.chars().mapToObj(c -> Character.toLowerCase((char) c))
-                .collect(Collectors.groupingBy(Character::charValue, LinkedHashMap::new ,Collectors.counting()))
+                .collect(Collectors.groupingBy(c -> c, LinkedHashMap::new ,Collectors.counting()))
                 .entrySet()
                 .stream()
                 .filter(e -> e.getValue() == 1L)
                 .map(Map.Entry::getKey)
                 .findFirst()
                 .orElse(null);
-        System.out.println(c2);
+        System.out.println("Updated " + c2);
 
         Character c1 = input.chars()
                 .mapToObj(c -> (char) c)

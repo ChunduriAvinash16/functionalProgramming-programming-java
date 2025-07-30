@@ -28,7 +28,7 @@ public class Q1to10 {
         System.out.println("Upper Case Names :" + upperCaseNames);
 
         //Sort the list of integer in ascending order
-        List<Integer> descendingOrder = list.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        List<Integer> descendingOrder = list.stream().sorted(Comparator.reverseOrder()).toList();
         List<Integer> ascendingOrder = list.stream().mapToInt(Integer::intValue).sorted().boxed().collect(Collectors.toList());
         System.out.println("Descending Order : " + descendingOrder);
         System.out.println("Ascending Order : " + ascendingOrder);
